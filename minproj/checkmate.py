@@ -23,6 +23,7 @@ def checkmate(board):
     grid = [list(r) for r in rows]
     
     king_r, king_c = None, None
+    # หา K
     for r in range(height):
         for c in range(width):
             if grid[r][c] == 'K':
@@ -47,6 +48,10 @@ def checkmate(board):
     def is_in_bound(r, c):
         return 0 <= r < height and 0 <= c < width
 
+# .R..
+# .K..
+# .K..
+# ....
     def scan_threat(dirs, threat_types, is_pawn_check=False):
         for dr, dc in dirs:
             r, c = king_r + dr, king_c + dc
@@ -68,8 +73,8 @@ def checkmate(board):
                     else:
                         break
                 
-                elif piece == 'K': 
-                    break 
+                # elif piece == 'K': 
+                #     break 
            
                 r += dr
                 c += dc
