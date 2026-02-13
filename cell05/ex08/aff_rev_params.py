@@ -6,6 +6,6 @@ count = len(sys.argv) - 1
 
 if count < 2:
     print("none")
-else:
+else:   
     for param in sys.argv[1:][::-1]:
         print(param)
